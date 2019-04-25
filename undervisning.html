@@ -76,7 +76,7 @@
 
 
         function first() {
-            this.classList.toggle("active");
+            this.classList.toggle("pressed");
 
             if (one.style.display === "block") {
                 one.style.display = "none";
@@ -87,15 +87,15 @@
             two.style.display = "none";
             three.style.display = "none";
 
-            document.querySelector("#second").classList.remove("active");
-            document.querySelector("#third").classList.remove("active");
+            document.querySelector("#second").classList.remove("pressed");
+            document.querySelector("#third").classList.remove("pressed");
 
         }
 
 
 
         function second() {
-            this.classList.toggle("active");
+            this.classList.toggle("pressed");
 
             if (two.style.display === "block") {
                 two.style.display = "none";
@@ -106,12 +106,12 @@
             one.style.display = "none";
             three.style.display = "none";
 
-            document.querySelector("#first").classList.remove("active");
-            document.querySelector("#third").classList.remove("active");
+            document.querySelector("#first").classList.remove("pressed");
+            document.querySelector("#third").classList.remove("pressed");
         }
 
         function third() {
-            this.classList.toggle("active");
+            this.classList.toggle("pressed");
 
             if (three.style.display === "block") {
                 three.style.display = "none";
@@ -122,8 +122,8 @@
             two.style.display = "none";
             one.style.display = "none";
 
-            document.querySelector("#first").classList.remove("active");
-            document.querySelector("#second").classList.remove("active");
+            document.querySelector("#first").classList.remove("pressed");
+            document.querySelector("#second").classList.remove("pressed");
 
         }
     </script>

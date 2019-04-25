@@ -209,7 +209,6 @@ button {
 /**** BESØG oS ********/
 #guide p {
     margin: 0 20px 40px;
-    ;
 }
 
 #faq {
@@ -228,7 +227,8 @@ button {
     border: none;
     text-align: left;
     outline: none;
-    margin: 0;
+    margin: 3vw 0;
+
 
 }
 
@@ -254,7 +254,7 @@ button {
     margin-left: 5px;
 }
 
-.faq .active:after {
+.active:after {
     content: "\02212";
 }
 
@@ -291,6 +291,10 @@ button {
 #secondclass,
 #thirdclass {
     display: none;
+}
+
+.pressed {
+    background-color: rgba(180, 168, 131, 0.37);
 }
 
 /*****MEDIAQUERIES********/
