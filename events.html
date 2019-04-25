@@ -7,44 +7,67 @@
     <title>Kalender</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
-<nav>
-    <div id="left">
-        <a href="index.html">
-            <div id="logo"></div>
-        </a>
-    </div>
-    <div id="right">
-        <a href="visit.html">Besøg os</a>
-        <a href="undervisning.html">Undervisning</a>
-        <a href="events.html">Events</a>
-        <a href="kontakt.html">Kontakt os</a>
-        <a href="billet.html">Køb billet</a>
-    </div>
-</nav>
+<header>
+    <nav>
+        <div id="left">
+            <a href="index.html">
+                <div id="logo"></div>
+            </a>
+        </div>
+        <div id="right">
+            <a href="visit.html">Besøg os</a>
+            <a href="undervisning.html">Undervisning</a>
+            <a href="events.html">Events</a>
+            <a href="kontakt.html">Kontakt os</a>
+            <a href="billet.html">Køb billet</a>
+        </div>
+    </nav>
+</header>
 
 <body>
 
     <div id="calendar">
-        <div id="days">
-            <div id="monday" class="day"></div>
-            <div id="tuesday" class="day"></div>
-            <div id="wednesday" class="day"></div>
-            <div id="thursday" class="day"></div>
-            <div id="friday" class="day"></div>
-            <div id="saturday" class="day"></div>
-            <div id="sunday" class="day"></div>
-        </div>
-        <div id="select">
-            <icon>KALENDER</icon>
-            <div id="arrows">
-                <div id="arrowleft"></div>
-                <div id="arrowright"></div>
-            </div>
-        </div>
+        <h1>Events</h1>
     </div>
 
-    <div id="gallery"></div>
+
+
+    <template>
+        <section class="event">
+            <h2></h2>
+            <div class="description"></div>
+        </section>
+    </template>
+
+    <script>
+        let events = [];
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            async function getJson() {
+                let url = "https://karolinekrogsboell.dk/kea/kalklandet/wordpress/wp-json/wp/v2/event";
+                let jsonData = await fetch(url);
+                events = await jsonData.json();
+                visEvents();
+            }
+
+            function visEvents() {
+                let dest = document.querySelector("#calendar");
+
+                let temp = document.querySelector("template");
+
+                events.forEach(event => {
+                    let klon = temp.cloneNode(true).content;
+
+                    klon.querySelector("h2").innerHTML = event.title.rendered;
+                    klon.querySelector(".description").innerHTML = event.content.rendered;
+
+                    dest.appendChild(klon);
+                })
+            }
+            getJson();
+        }
+    </script>
 
     <footer>
         <div id="textf">priser og åbningstider</div>

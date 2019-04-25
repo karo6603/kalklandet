@@ -297,6 +297,31 @@ button {
     background-color: rgba(180, 168, 131, 0.37);
 }
 
+
+/***** EVENTS ******/
+
+.event {
+    max-width: 400px;
+    margin: 10vw auto;
+}
+
+/********* KONTAKT *************/
+
+#contact li {
+    list-style: none;
+    font-family: 'limestonelight';
+}
+
+#contact ul {
+    padding: 3vw;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+#contact h2 {
+    margin: 0 0 3vw;
+}
+
 /*****MEDIAQUERIES********/
 
 @media (min-width: 610px) {
@@ -328,6 +353,37 @@ button {
 
     #dropdownbuttons button {
         margin: 0 0 0 2vw;
+    }
+
+    .event {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 8vw auto;
+        max-width: 800px;
+
+    }
+
+    .event h2 {
+        margin: 2vw;
+    }
+
+    #calendar h1 {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    #contact h1 {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    #contact h2 {
+        margin-top: 2vw;
+    }
+
+    #contact ul {
+        max-width: 780px;
+        padding: 1vw;
     }
 }
 
