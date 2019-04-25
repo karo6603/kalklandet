@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forside</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<header>
+    <nav>
+        <div id="left">
+            <a href="index.html">
+                <div id="logo"></div>
+            </a>
+        </div>
+        <div id="right">
+            <a href="visit.html">Besøg os</a>
+            <a href="undervisning.html">Undervisning</a>
+            <a href="events.html">Events</a>
+            <a href="kontakt.html">Kontakt os</a>
+            <a href="billet.html">Køb billet</a>
+        </div>
+    </nav>
+</header>
+
+<body>
+
+    <div id="visitus">
+
+        <div id="guide">
+            <h1>Guidede ture</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida neque a sapien mattis, quis commodo justo viverra. In consequat tellus vitae semper porttitor. Cras venenatis diam eu justo ultrices, id ultrices elit euismod. Pellentesque vel felis sed magna ornare elementum. Fusce dapibus neque a elementum malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent in tempus neque, ut gravida diam. Mauris sed porta felis. Quisque lacinia, eros in scelerisque tempor, enim ipsum egestas nulla, at molestie libero ex vel enim. Vivamus porta, orci vitae faucibus fringilla, quam urna commodo risus, vitae molestie ligula purus et massa. Ut tincidunt non velit eu placerat. Nullam nec ante eget erat interdum placerat.</p>
+        </div>
+
+        <div id="faq">
+            <h1>FAQ</h1>
+
+            <button class="faq">Spørgsmål</button>
+            <div class="content">
+                <p>svar</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer>
+        <div class="textf">priser og åbningstider</div>
+    </footer>
+
+
+    <script>
+        let faq = document.querySelector(".faq");
+
+        faq.addEventListener("click", start);
+
+        function start() {
+            this.classList.toggle("active");
+
+            let content = this.nextElementSibling;
+
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>

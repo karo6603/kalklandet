@@ -1,0 +1,444 @@
+@font-face {
+    font-family: 'limestonebold';
+    src: url('materiale/Font/limestone_bold-webfont.woff2') format('woff2'),
+        url('materiale/Font/limestone_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'limestoneheavy';
+    src: url('materiale/Font/limestone_heavy-webfont.woff2') format('woff2'),
+        url('materiale/Font/limestone_heavy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'limestonelight';
+    src: url('materiale/Font/limestone_light-webfont.woff2') format('woff2'),
+        url('materiale/Font/limestone_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'limestoneregular';
+    src: url('materiale/Font/limestone_regular-webfont.woff2') format('woff2'),
+        url('materiale/Font/limestone_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    margin: 10px;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    font-family: 'limestonelight';
+    text-transform: uppercase;
+    text-decoration: underline #B4A883;
+    text-underline-position: under;
+}
+
+h2 {
+    font-family: 'limestonelight';
+    text-transform: uppercase;
+}
+
+p {
+    font-family: 'limestonelight';
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: 'limestoneregular';
+    text-transform: uppercase;
+    font-size: 13.5px;
+    margin: 50px 10px 0px 0px;
+}
+
+#logo {
+    background-image: url(materiale/Billeder/Asset%201.png);
+    width: 200px;
+    height: 40px;
+    background-size: contain;
+}
+
+#footer {}
+
+/******* INDEX *********/
+
+#top {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 30px;
+}
+
+#stevnsfort {
+    text-align: right;
+}
+
+#geomuseum {
+    margin-top: 60vw;
+}
+
+#geomuseum img {
+    width: 150%;
+}
+
+#stevnsklint {
+    display: flex;
+    justify-content: center;
+}
+
+#stevnsklint a {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+#stevnsklint h1 {
+    margin-top: 50px;
+    position: absolute;
+}
+
+#stevnsklint img {
+    width: 50%;
+    height: 70vw;
+    padding: 30px 0 0 0;
+}
+
+#route {
+    text-align: right;
+    margin-top: 50px;
+}
+
+#map {
+    background-image: url(materiale/Billeder/maps.png);
+    width: 90%;
+    height: 45vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 5vw;
+}
+
+#text1 {
+    font-family: 'limestonelight';
+}
+
+/******BESØGSSIDER*********/
+
+.text1 {
+    margin: 2vw 0 0;
+    padding: 0 2vw;
+}
+
+button {
+    background-color: white;
+    font-family: 'limestonelight';
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 30px 38vw;
+    cursor: pointer;
+}
+
+#geo h1 {
+    text-decoration: underline #00a5a3;
+}
+
+#geo .text1 {
+    border-bottom: solid #00a5a3 3px;
+}
+
+#geo button {
+    border: solid #00a5a3 4px;
+}
+
+#fort h1 {
+    text-decoration: underline #0081ad;
+}
+
+#fort .text1 {
+    border-bottom: solid #0081ad 3px;
+}
+
+#fort button {
+    border: solid #0081ad 4px;
+}
+
+#klint h1 {
+    text-decoration: underline #3b7389;
+}
+
+#klint .text1 {
+    border-bottom: solid #3b7389 3px;
+}
+
+#klint button {
+    border: solid #3b7389 4px;
+}
+
+.map {
+    margin-left: 10vw;
+}
+
+
+/**** BESØG oS ********/
+#guide p {
+    margin: 0 20px 40px;
+    ;
+}
+
+#faq {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+
+.faq {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    margin: 0;
+
+}
+
+.active,
+.faq:hover {
+    background-color: rgba(180, 168, 131, 0.37);
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: white;
+    text-align: left;
+}
+
+.faq:after {
+    content: '\0002B';
+    font-size: 35px;
+    color: black;
+    float: right;
+    margin-top: -13px;
+    margin-left: 5px;
+}
+
+.faq .active:after {
+    content: "\02212";
+}
+
+
+/******** UNDERVISNIng*********/
+
+#teachme {
+    margin: 0 auto;
+    max-width: 480px;
+}
+
+#topbuttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#topbuttons button {
+    margin: 1vw;
+    padding: 2vw;
+}
+
+#dropdownbuttons {
+    display: flex;
+    flex-direction: row;
+}
+
+#dropdownbuttons button {
+    margin: 2.5vw;
+    padding: 1vw 4vw;
+}
+
+#firstclass,
+#secondclass,
+#thirdclass {
+    display: none;
+}
+
+/*****MEDIAQUERIES********/
+
+@media (min-width: 610px) {
+    nav {
+        flex-direction: row;
+    }
+
+    #right {
+        margin-top: 30px;
+    }
+
+    button {
+        padding: 1vw;
+    }
+
+    #teachme {
+        max-width: 535px;
+    }
+
+    #dropdownbuttons button {
+        margin: 0 0 0 2.5vw;
+    }
+}
+
+@media (min-width: 850px) {
+    nav a {
+        font-size: 20px;
+    }
+
+    #dropdownbuttons button {
+        margin: 0 0 0 2vw;
+    }
+}
+
+@media (min-width: 900px) {
+    body {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    img {
+        width: 70%;
+    }
+
+    #geomuseum img {
+        width: 100%;
+    }
+
+    #stevnsklint img {
+        width: 40%;
+        height: 40vw;
+    }
+
+    #geomuseum {
+        margin-top: 30vw;
+    }
+
+    #stevnsklint h1 {
+        margin-left: 100px;
+    }
+
+    #map {
+        width: 60%;
+        margin: 5vw 20vw;
+    }
+
+    .text1 {
+        width: 62vw;
+        margin: 0 auto;
+    }
+
+    .map {
+        width: 40%;
+        margin: 4vw auto;
+    }
+
+    #geo img {
+        width: 100%;
+    }
+
+    #geo button {
+        margin: 2vw 40vw;
+        width: 10%;
+    }
+
+    #geo h1 {
+        width: 70%;
+        margin: 1vw auto;
+    }
+
+    #fort img {
+        width: 100%;
+    }
+
+    #fort button {
+        margin: 2vw 40vw;
+        width: 10%;
+    }
+
+    #fort h1 {
+        width: 70%;
+        margin: 1vw auto;
+    }
+
+    #fort .map {
+        width: 70%;
+    }
+
+    #klint img {
+        width: 100%;
+    }
+
+    #klint button {
+        margin: 2vw 40vw;
+        width: 10%;
+    }
+
+    #klint h1 {
+        width: 70%;
+        margin: 1vw auto;
+    }
+
+    .splash {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    #visitus {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    #teachme {
+        max-width: 700px;
+    }
+
+    #topbuttons:first-child {
+        margin-left: 1vw
+    }
+
+    #topbuttons button {
+        margin: 0 4vw 0 1vw;
+        padding: 1vw;
+    }
+
+    #dropdownbuttons button {
+        margin: 4vw 0 0 1vw;
+    }
+}

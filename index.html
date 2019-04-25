@@ -8,38 +8,79 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-
+<header>
     <nav>
         <div id="left">
-            <div id="logo"></div>
+            <a href="index.html"><div id="logo"></div></a>
         </div>
         <div id="right">
-            <li>
-                <ul><a href="undervisning.html">Undervisning</a></ul>
-                <ul><a href="events.html">Events</a></ul>
-                <ul><a href="billet.html">Køb billet</a></ul>
-                <ul><a href="kontakt.html">Kontakt os</a></ul>
-            </li>
+            <a href="visit.html">Besøg os</a>
+            <a href="undervisning.html">Undervisning</a>
+            <a href="events.html">Events</a>
+            <a href="kontakt.html">Kontakt os</a>
+            <a href="billet.html">Køb billet</a>
         </div>
     </nav>
+</header>
 
+<body>
 
-    <div id="museums">
-        <div id="top"><a href="stevnsklint.html">BILLEDE</a>
-            <a href="stevnsfort.html">BILLEDE</a></div>
-        <div id="bottom"><a href="geomuseum.html">BILLEDE</a></div>
+    <div class="museums">
+        <div id="top">
+            <div id="stevnsfort">
+                <h1>Stevnsfort</h1><a href="stevnsfort.html"><img src="materiale/Billeder/IMG_3615.PNG"></a>
+            </div>
+
+            <div id="geomuseum">
+                <h1>Geofaxe museum</h1>
+                <a href="geomuseum.html"><img src="materiale/Billeder/IMG_3614.PNG"></a>
+            </div>
+        </div>
+
+        <div id="bottom">
+            <div id="stevnsklint">
+                <h1>Stevnsklint</h1>
+                <a href="stevnsklint.html"><img src="materiale/Billeder/IMG_3617.PNG">
+                </a>
+            </div>
+        </div>
     </div>
 
 
-    <div id="info">
-        <div id="text1">priser</div>
-        <div id="text2">åbningstider</div>
+    <div class="info">
+        <h1>Åbningstider</h1>
+        <div id="text1"></div>
+        <div id="text2"></div>
+    </div>
+
+    <div id="route">
+        <h1>Rutevejledning</h1>
+        <div id="map"></div>
     </div>
 
     <footer>
-        <div id="textf">priser og åbningstider</div>
+        <div class="textf">priser og åbningstider</div>
     </footer>
+
+
+    <script>
+        let indhold;
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            async function getJson() {
+                let url = "https://karolinekrogsboell.dk/kea/kalklandet/wordpress/wp-json/wp/v2/posts/40";
+                let jsonData = await fetch(url);
+                indhold = await jsonData.json();
+                visIndhold();
+            }
+
+            function visIndhold() {
+                document.querySelector("#text1").innerHTML = indhold.content.rendered;
+            }
+            getJson();
+        }
+    </script>
 </body>
 
 </html>

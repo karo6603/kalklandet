@@ -8,46 +8,125 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-
+<header>
     <nav>
         <div id="left">
-            <div id="logo"></div>
+            <a href="index.html">
+                <div id="logo"></div>
+            </a>
         </div>
         <div id="right">
-            <li>
-                <ul><a href="undervisning.html">Undervisning</a></ul>
-                <ul><a href="events.html">Events</a></ul>
-                <ul><a href="billet.html">Køb billet</a></ul>
-                <ul><a href="kontakt.html">Kontakt os</a></ul>
-            </li>
+            <a href="visit.html">Besøg os</a>
+            <a href="undervisning.html">Undervisning</a>
+            <a href="events.html">Events</a>
+            <a href="kontakt.html">Kontakt os</a>
+            <a href="billet.html">Køb billet</a>
         </div>
     </nav>
+</header>
 
-    <div id="topbuttons">
-        <button>KLASSETRIN</button>
-        <button>KLASSETRIN</button>
-        <button>KLASSETRIN</button>
-    </div>
+<body>
 
-    <div id="dropdownbuttons">
-        <button>FAG</button>
-        <button>FAG</button>
-        <button>FAG</button>
-        <button>FAG</button>
-    </div>
+    <div id="teachme">
 
-    <div id="materials">
-        <div class="pdf">JSON</div>
-    </div>
+        <div id="topbuttons">
+            <button id="first">0.-3. klasse</button>
+            <button id="second">4.-6. klasse</button>
+            <button id="third">7.-10. klasse</button>
+        </div>
 
-    <div id="booking">
-        KONTAKTFORMULAR
+        <div id="dropdownbuttons">
+            <div id="firstclass"><button>natur</button>
+                <button>historie</button>
+                <button>geografi</button>
+            </div>
+            <div id="secondclass">
+                <button>geologi</button>
+                <button>biologi</button>
+                <button>geografi</button>
+            </div>
+            <div id="thirdclass"><button>geologi</button><button>biologi</button><button>geografi</button>
+            </div>
+        </div>
+
+        <div id="materials">
+            <div class="pdf">JSON</div>
+        </div>
+
+        <div id="booking">
+            KONTAKTFORMULAR
+        </div>
+
     </div>
 
     <footer>
         <div id="textf">priser og åbningstider</div>
     </footer>
+
+
+    <script>
+        let one = document.querySelector("#firstclass");
+        let two = document.querySelector("#secondclass");
+        let three = document.querySelector("#thirdclass");
+        document.querySelector("#first").addEventListener("click", first);
+
+        document.querySelector("#second").addEventListener("click", second);
+
+        document.querySelector("#third").addEventListener("click", third);
+
+
+        function first() {
+            this.classList.toggle("active");
+
+            if (one.style.display === "block") {
+                one.style.display = "none";
+            } else {
+                one.style.display = "block";
+            }
+
+            two.style.display = "none";
+            three.style.display = "none";
+
+            document.querySelector("#second").classList.remove("active");
+            document.querySelector("#third").classList.remove("active");
+
+        }
+
+
+
+        function second() {
+            this.classList.toggle("active");
+
+            if (two.style.display === "block") {
+                two.style.display = "none";
+            } else {
+                two.style.display = "block";
+            }
+
+            one.style.display = "none";
+            three.style.display = "none";
+
+            document.querySelector("#first").classList.remove("active");
+            document.querySelector("#third").classList.remove("active");
+        }
+
+        function third() {
+            this.classList.toggle("active");
+
+            if (three.style.display === "block") {
+                three.style.display = "none";
+            } else {
+                three.style.display = "block";
+            }
+
+            two.style.display = "none";
+            one.style.display = "none";
+
+            document.querySelector("#first").classList.remove("active");
+            document.querySelector("#second").classList.remove("active");
+
+        }
+    </script>
 </body>
 
 </html>
