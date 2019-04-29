@@ -48,10 +48,11 @@
             <button id="third">7.-10. klasse</button>
         </div>
 
+        <!--
         <div id="dropdownbuttons">
-            <div id="firstclass"><button>natur</button>
-                <button>historie</button>
-                <button>geografi</button>
+            <div id="firstclass"><button class="filterone">natur</button>
+                <button class="filterone">historie</button>
+                <button class="filterone">geografi</button>
             </div>
             <div id="secondclass">
                 <button>geologi</button>
@@ -61,9 +62,18 @@
             <div id="thirdclass"><button>geologi</button><button>biologi</button><button>geografi</button>
             </div>
         </div>
+-->
 
         <div id="materials">
-            <div class="pdf">JSON</div>
+            <template>
+                <section class="pdf">
+                    <h2></h2>
+                    <div class="under">
+                        <div class="short"></div>
+                        <div class="description"></div>
+                    </div>
+                </section>
+            </template>
         </div>
 
         <div id="booking">
@@ -87,7 +97,7 @@
         </div>
 
     </div>
-<footer>
+    <footer>
         <div class="flogo"></div>
         <div class="some">
             <div class="insta"></div>
@@ -103,63 +113,107 @@
         let one = document.querySelector("#firstclass");
         let two = document.querySelector("#secondclass");
         let three = document.querySelector("#thirdclass");
-        document.querySelector("#first").addEventListener("click", first);
+        //        document.querySelector("#first").addEventListener("click", first);
+        //
+        //        document.querySelector("#second").addEventListener("click", second);
+        //
+        //        document.querySelector("#third").addEventListener("click", third);
 
-        document.querySelector("#second").addEventListener("click", second);
 
-        document.querySelector("#third").addEventListener("click", third);
+        //        function first() {
+        //            this.classList.toggle("pressed");
+        //
+        //            if (one.style.display === "block") {
+        //                one.style.display = "none";
+        //            } else {
+        //                one.style.display = "block";
+        //            }
+        //
+        //            two.style.display = "none";
+        //            three.style.display = "none";
+        //
+        //            document.querySelector("#second").classList.remove("pressed");
+        //            document.querySelector("#third").classList.remove("pressed");
+        //
+        //        }
+        //
+        //        function second() {
+        //            this.classList.toggle("pressed");
+        //
+        //            if (two.style.display === "block") {
+        //                two.style.display = "none";
+        //            } else {
+        //                two.style.display = "block";
+        //            }
+        //
+        //            one.style.display = "none";
+        //            three.style.display = "none";
+        //
+        //            document.querySelector("#first").classList.remove("pressed");
+        //            document.querySelector("#third").classList.remove("pressed");
+        //        }
+        //
+        //        function third() {
+        //            this.classList.toggle("pressed");
+        //
+        //            if (three.style.display === "block") {
+        //                three.style.display = "none";
+        //            } else {
+        //                three.style.display = "block";
+        //            }
+        //
+        //            two.style.display = "none";
+        //            one.style.display = "none";
+        //
+        //            document.querySelector("#first").classList.remove("pressed");
+        //            document.querySelector("#second").classList.remove("pressed");
+        //
+        //        }
 
 
-        function first() {
-            this.classList.toggle("pressed");
+        let materialer = [];
+        document.addEventListener("DOMContentLoaded", start);
+        let dest = document.querySelector("#materials");
 
-            if (one.style.display === "block") {
-                one.style.display = "none";
-            } else {
-                one.style.display = "block";
+        function start() {
+
+            async function getJson() {
+                let url = ("https://karolinekrogsboell.dk/kea/kalklandet/wordpress/wp-json/wp/v2/0-3_klasse");
+                let jsonData = await fetch(url);
+                materialer = await jsonData.json();
+                visMaterialer();
             }
 
-            two.style.display = "none";
-            three.style.display = "none";
+            function visMaterialer() {
 
-            document.querySelector("#second").classList.remove("pressed");
-            document.querySelector("#third").classList.remove("pressed");
+                let temp = document.querySelector("template");
 
-        }
+                materialer.forEach(enkeltMateriale => {
 
+                    let klon = temp.cloneNode(true).content;
 
+                    klon.querySelector("h2").innerHTML = enkeltMateriale.title.rendered;
+                    klon.querySelector(".description").innerHTML = enkeltMateriale.content.rendered;
 
-        function second() {
-            this.classList.toggle("pressed");
+                    klon.querySelector(".short").innerHTML = enkeltMateriale.uddrag;
 
-            if (two.style.display === "block") {
-                two.style.display = "none";
-            } else {
-                two.style.display = "block";
+                    dest.appendChild(klon);
+                })
+
+                document.querySelector("#first").addEventListener("click", first);
+
+                function first() {
+                    this.classList.toggle("pressed");
+                    if (dest.style.display === "block") {
+                        dest.style.display = "none";
+                    } else {
+                        dest.style.display = "block";
+                    }
+                }
+
             }
 
-            one.style.display = "none";
-            three.style.display = "none";
-
-            document.querySelector("#first").classList.remove("pressed");
-            document.querySelector("#third").classList.remove("pressed");
-        }
-
-        function third() {
-            this.classList.toggle("pressed");
-
-            if (three.style.display === "block") {
-                three.style.display = "none";
-            } else {
-                three.style.display = "block";
-            }
-
-            two.style.display = "none";
-            one.style.display = "none";
-
-            document.querySelector("#first").classList.remove("pressed");
-            document.querySelector("#second").classList.remove("pressed");
-
+            getJson()
         }
     </script>
 </body>

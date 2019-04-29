@@ -374,6 +374,19 @@ button {
     font-family: 'limestonelight';
 }
 
+#materials {
+    display: none;
+}
+
+.short {
+    font-family: 'limestonelight';
+    margin-left: 15px;
+}
+
+#materials h2 {
+    margin-left: 10px;
+}
+
 #booking p {
     font-weight: 900;
 }
