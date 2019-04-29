@@ -44,9 +44,23 @@
     <template>
         <section class="event">
             <h2></h2>
-            <div class="description"></div>
+            <div class="down">
+                <div class="date"></div>
+                <div class="description"></div>
+            </div>
         </section>
     </template>
+
+<footer>
+        <div class="flogo"></div>
+        <div class="some">
+            <div class="insta"></div>
+            <div class="fb"></div>
+        </div>
+        <div id="madeby">
+            <p>By gruppe 6B</p>
+        </div>
+    </footer>
 
     <script>
         let events = [];
@@ -71,6 +85,8 @@
                     klon.querySelector("h2").innerHTML = event.title.rendered;
                     klon.querySelector(".description").innerHTML = event.content.rendered;
 
+                    klon.querySelector(".date").innerHTML = event.dato;
+
                     dest.appendChild(klon);
                 })
             }
@@ -78,9 +94,6 @@
         }
     </script>
 
-    <footer>
-        <div id="textf">priser og åbningstider</div>
-    </footer>
 </body>
 
 </html>

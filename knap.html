@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Knap</title>
+  </head>
+  <style>
+    .knap {
+      overflow: hidden;
+    }
+
+    button {
+      float: left;
+      border: none;
+      height: 24px;
+      margin: 5px;
+    }
+
+    p {
+      float: left;
+      font-size: 24px;
+      margin: 5px;
+      height: 24px;
+    }
+
+    .one {
+      color: green;
+    }
+
+    .two {
+      color: blue;
+    }
+
+    .three {
+      color: red;
+    }
+  </style>
+  <body>
+    <div class="knap one">
+      <button onclick="sub1()">-</button>
+      <p id="number1">0</p>
+      <button onclick="add1()">+</button>
+    </div>
+
+    <div class="knap two">
+      <button onclick="sub2()">-</button>
+      <p id="number2">0</p>
+      <button onclick="add2()">+</button>
+    </div>
+
+    <div class="knap three">
+      <button onclick="sub3()">-</button>
+      <p id="number3">0</p>
+      <button onclick="add3()">+</button>
+    </div>
+
+    <script>
+      function sub1() {
+        document.getElementById("number1").innerHTML --;
+      }
+      function add1() {
+        document.getElementById("number1").innerHTML ++;
+      }
+      function sub2() {
+        document.getElementById("number2").innerHTML --;
+      }
+      function add2() {
+        document.getElementById("number2").innerHTML ++;
+      }
+      function sub3() {
+        document.getElementById("number3").innerHTML --;
+      }
+      function add3() {
+        document.getElementById("number3").innerHTML ++;
+      }
+    </script>
+  </body>
+</html>

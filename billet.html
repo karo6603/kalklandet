@@ -2,156 +2,142 @@
 <html lang="da">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Billet</title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <header>
-	<nav>
-		<div id="left">
-			<a href="index.html">
-				<div id="logo"></div>
-			</a>
-		</div>
-		<div id="right">
-			<div class="dropdown">
-				<a>Besøg os<i class="fa fa-angle-down"></i></a>
-				<div class="dropdown-content">
-					<a href="visit.html">Information</a>
-					<a href="stevnsfort.html">Stevns fort</a>
-					<a href="geomuseum.html">Geofaxe museum</a>
-					<a href="stevnsklint.html">Stevns klint</a>
-				</div>
-			</div>
-			<a href="undervisning.html">Undervisning</a>
-			<a href="events.html">Events</a>
-			<a href="kontakt.html">Kontakt os</a>
-			<a href="billet.html">Køb billet</a>
-		</div>
-	</nav>
+    <nav>
+        <div id="left">
+            <a href="index.html">
+                <div id="logo"></div>
+            </a>
+        </div>
+        <div id="right">
+            <div class="dropdown">
+                <a>Besøg os<i class="fa fa-angle-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="visit.html">Information</a>
+                    <a href="stevnsfort.html">Stevns fort</a>
+                    <a href="geomuseum.html">Geofaxe museum</a>
+                    <a href="stevnsklint.html">Stevns klint</a>
+                </div>
+            </div>
+            <a href="undervisning.html">Undervisning</a>
+            <a href="events.html">Events</a>
+            <a href="kontakt.html">Kontakt os</a>
+            <a href="billet.html">Køb billet</a>
+        </div>
+    </nav>
 </header>
 
 <body>
 
-	<div id="prices">
-		<div id="partone">
-			<h1>Dagsbilletter</h1>
-			<p>Billetten giver adgang til alle museer for en dag.</p>
+    <div id="prices">
+        <div id="partone">
+            <h1>Dagsbilletter</h1>
+            <p>Billetten giver adgang til alle museer for en dag.</p>
 
-			<a href="">Køb Årskort</a>
-			<a href="">Køb Gavekort</a>
-		</div>
+            <a href="">Køb Årskort</a>
+            <a href="">Køb Gavekort</a>
+        </div>
 
-		<div id="parttwo">
-			<div class="tickets">
-				<h2>Barn</h2>
-				<div class="information">
-					<p>Under 5 år</p>
-					<p>0 kr.</p>
-					<div class="number">
-						<div class="minus">
-							<p>&#45;</p>
-						</div>
-						<p>0</p>
-						<div class="plus">
-							<p>&#43;</p>
-						</div>
-					</div>
-				</div>
-			</div>
+        <div id="parttwo">
+            <div class="tickets">
+                <h2>Barn</h2>
+                <div class="information">
+                    <p>Under 5 år</p>
+                    <p>0 kr.</p>
+                    <div class="knap one">
+                        <button onclick="sub1()">-</button>
+                        <p id="number1">0</p>
+                        <button onclick="add1()">+</button>
+                    </div>
+                </div>
+            </div>
 
-			<div class="tickets">
-				<h2>Ung</h2>
-				<div class="information">
-					<p>Under 18</p>
-					<p>70 kr.</p>
-					<div class="number">
-						<div class="minus">
-							<p>&#45;</p>
-						</div>
-						<p>0</p>
-						<div class="plus">
-							<p>&#43;</p>
-						</div>
-					</div>
-				</div>
-			</div>
+            <div class="tickets">
+                <h2>Ung</h2>
+                <div class="information">
+                    <p>Under 18</p>
+                    <p>70 kr.</p>
+                    <div class="knap two">
+                        <button onclick="sub2()">-</button>
+                        <p id="number2">0</p>
+                        <button onclick="add2()">+</button>
+                    </div>
+                </div>
+            </div>
 
-			<div class="tickets">
-				<h2>Voksen</h2>
-				<div class="information">
-					<p>18+</p>
-					<p>90 kr.</p>
-					<div class="number">
-						<div class="minus">
-							<p>&#45;</p>
-						</div>
-						<p>0</p>
-						<div class="plus">
-							<p>&#43;</p>
-						</div>
-					</div>
-				</div>
-			</div>
+            <div class="tickets">
+                <h2>Voksen</h2>
+                <div class="information">
+                    <p>18+</p>
+                    <p>90 kr.</p>
+                    <div class="knap three">
+                        <button onclick="sub3()">-</button>
+                        <p id="number3">0</p>
+                        <button onclick="add3()">+</button>
+                    </div>
+                </div>
+            </div>
 
-			<div class="tickets">
-				<h2>Studerende/Pensionister</h2>
-				<div class="information">
-					<p>65+</p>
-					<p>75 kr.</p>
-					<div class="number">
-						<div class="minus">
-							<p>&#45;</p>
-						</div>
-						<p>0</p>
-						<div class="plus">
-							<p>&#43;</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<button>Køb</button>
-		</div>
-	</div>
+            <div class="tickets">
+                <h2>Studerende/Pensionister</h2>
+                <div class="information">
+                    <p>65+</p>
+                    <p>75 kr.</p>
+                    <div class="knap four">
+                        <button onclick="sub4()">-</button>
+                        <p id="number4">0</p>
+                        <button onclick="add4()">+</button>
+                    </div>
+                </div>
+            </div>
+            <button>Køb</button>
+        </div>
+    </div>
 
-	<footer>
-		<div id="textf">priser og åbningstider</div>
-	</footer>
+    <footer>
+        <div class="flogo"></div>
+        <div class="some">
+            <div class="insta"></div>
+            <div class="fb"></div>
+        </div>
+        <div id="madeby">
+            <p>By gruppe 6B</p>
+        </div>
+    </footer>
 
 
-	<script>
-		let number = 0;
+    <script>
+        function sub1() {
+            document.getElementById("number1").innerHTML--;
+        }
 
-		let plus = document.querySelector(".plus");
-		let minus = document.querySelector(".minus");
+        function add1() {
+            document.getElementById("number1").innerHTML++;
+        }
 
-		plus.addEventListener("click", add);
-		minus.addEventListener("click", sub);
+        function sub2() {
+            document.getElementById("number2").innerHTML--;
+        }
 
+        function add2() {
+            document.getElementById("number2").innerHTML++;
+        }
 
-		function add() {
+        function sub3() {
+            document.getElementById("number3").innerHTML--;
+        }
 
-			number++;
-
-			let dest = this.previousElementSibling;
-
-			dest.innerHTML = number;
-		}
-
-		function sub() {
-
-			if (number > 0) {
-				number--;
-
-				let dest = this.nextElementSibling;
-
-				dest.innerHTML = number;
-			}
-		}
-	</script>
+        function add3() {
+            document.getElementById("number3").innerHTML++;
+        }
+    </script>
 </body>
 
 </html>
