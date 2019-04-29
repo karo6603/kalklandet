@@ -1,119 +1,123 @@
 @font-face {
-    font-family: 'limestonebold';
-    src: url('materiale/Font/limestone_bold-webfont.woff2') format('woff2'),
-        url('materiale/Font/limestone_bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'limestonebold';
+	src: url('materiale/Font/limestone_bold-webfont.woff2') format('woff2'),
+		url('materiale/Font/limestone_bold-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 
 }
 
 
 @font-face {
-    font-family: 'limestoneheavy';
-    src: url('materiale/Font/limestone_heavy-webfont.woff2') format('woff2'),
-        url('materiale/Font/limestone_heavy-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'limestoneheavy';
+	src: url('materiale/Font/limestone_heavy-webfont.woff2') format('woff2'),
+		url('materiale/Font/limestone_heavy-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'limestonelight';
-    src: url('materiale/Font/limestone_light-webfont.woff2') format('woff2'),
-        url('materiale/Font/limestone_light-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'limestonelight';
+	src: url('materiale/Font/limestone_light-webfont.woff2') format('woff2'),
+		url('materiale/Font/limestone_light-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'limestoneregular';
-    src: url('materiale/Font/limestone_regular-webfont.woff2') format('woff2'),
-        url('materiale/Font/limestone_regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'limestoneregular';
+	src: url('materiale/Font/limestone_regular-webfont.woff2') format('woff2'),
+		url('materiale/Font/limestone_regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 
 }
 
 body {
-    max-width: 1000px;
-    margin: 0 auto;
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 header {
-    margin: 10px;
+	margin: 10px;
 }
 
 img {
-    width: 100%;
+	width: 100%;
 }
 
 h1 {
-    font-family: 'limestonelight';
-    text-transform: uppercase;
-    text-decoration: underline #B4A883;
-    text-underline-position: under;
+	font-family: 'limestonelight';
+	text-transform: uppercase;
+	text-decoration: underline #B4A883;
+	text-underline-position: under;
 }
 
 h2 {
-    font-family: 'limestonelight';
-    text-transform: uppercase;
+	font-family: 'limestonelight';
+	text-transform: uppercase;
 }
 
 p {
-    font-family: 'limestonelight';
+	font-family: 'limestonelight';
 }
 
 nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 nav a {
-    text-decoration: none;
-    color: black;
-    font-family: 'limestoneregular';
-    text-transform: uppercase;
-    font-size: 13.5px;
-    margin: 50px 10px 0px 0px;
+	text-decoration: none;
+	color: black;
+	font-family: 'limestoneregular';
+	text-transform: uppercase;
+	font-size: 13.5px;
+	margin: 50px 8px 0px 0px;
 }
 
 #logo {
-    background-image: url(materiale/Billeder/Asset%201.png);
-    width: 200px;
-    height: 40px;
-    background-size: contain;
+	background-image: url(materiale/Billeder/Asset%201.png);
+	width: 200px;
+	height: 40px;
+	background-size: contain;
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
+	position: relative;
+	display: inline-block;
+}
+
+i {
+	margin-left: 3px;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 25vw;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    background-color: white;
+	display: none;
+	position: absolute;
+	min-width: 10vw;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	background-color: white;
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 5vw 2vw;
-    border-bottom: 2px solid #B4A883;
-    display: block;
-    margin: 0;
+	color: black;
+	padding: 2vw 2vw;
+	border-bottom: 2px solid #B4A883;
+	display: block;
+	margin: 0;
 }
 
 .dropdown-content a:last-child {
-    border-bottom: none;
+	border-bottom: none;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+	display: block;
 }
 
 
@@ -122,465 +126,585 @@ nav a {
 /******* INDEX *********/
 
 #top {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-top: 30px;
+	display: flex;
+	flex-direction: row-reverse;
+	margin-top: 30px;
 }
 
 #stevnsfort {
-    text-align: right;
+	text-align: right;
 }
 
 #stevnsfort h1 {
-    margin-right: 2vw;
+	margin-right: 2vw;
 }
 
 #geomuseum {
-    margin-top: 60vw;
+	margin-top: 60vw;
 }
 
 #geomuseum img {
-    width: 150%;
+	width: 150%;
 }
 
 #geomuseum h1 {
-    margin-left: 2vw;
+	margin-left: 2vw;
 }
 
 #stevnsklint {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 #stevnsklint a {
-    display: flex;
-    justify-content: flex-end;
+	display: flex;
+	justify-content: flex-end;
 }
 
 
 #stevnsklint h1 {
-    margin-top: 50px;
-    position: absolute;
+	margin-top: 50px;
+	position: absolute;
 }
 
 #stevnsklint img {
-    width: 50%;
-    height: 70vw;
-    padding: 30px 0 0 0;
+	width: 50%;
+	height: 70vw;
+	padding: 30px 0 0 0;
 }
 
 #route {
-    text-align: right;
-    margin-top: 50px;
+	text-align: right;
+	margin-top: 50px;
 }
 
 #map {
-    background-image: url(materiale/Billeder/maps.png);
-    width: 90%;
-    height: 45vw;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin: 0 5vw;
+	background-image: url(materiale/Billeder/maps.png);
+	width: 90%;
+	height: 45vw;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin: 0 5vw;
 }
 
 #text1 {
-    font-family: 'limestonelight';
+	font-family: 'limestonelight';
 }
 
 /******BESØGSSIDER*********/
 
 .text1 {
-    margin: 2vw 0 0;
-    padding: 0 2vw;
+	margin: 2vw 0 0;
+	padding: 0 2vw;
 }
 
 button {
-    background-color: white;
-    font-family: 'limestonelight';
-    text-transform: uppercase;
-    font-size: 20px;
-    padding: 10px 20px;
-    margin: 30px 38vw;
-    cursor: pointer;
+	background-color: white;
+	font-family: 'limestonelight';
+	text-transform: uppercase;
+	font-size: 20px;
+	padding: 10px 20px;
+	margin: 30px 38vw;
+	cursor: pointer;
 }
 
 #geo h1 {
-    text-decoration: underline #00a5a3;
+	text-decoration: underline #00a5a3;
 }
 
 #geo .text1 {
-    border-bottom: solid #00a5a3 3px;
+	border-bottom: solid #00a5a3 3px;
 }
 
 #geo button {
-    border: solid #00a5a3 4px;
+	border: solid #00a5a3 4px;
 }
 
 #fort h1 {
-    text-decoration: underline #0081ad;
+	text-decoration: underline #0081ad;
 }
 
 #fort .text1 {
-    border-bottom: solid #0081ad 3px;
+	border-bottom: solid #0081ad 3px;
 }
 
 #fort button {
-    border: solid #0081ad 4px;
+	border: solid #0081ad 4px;
 }
 
 #klint h1 {
-    text-decoration: underline #3b7389;
+	text-decoration: underline #3b7389;
 }
 
 #klint .text1 {
-    border-bottom: solid #3b7389 3px;
+	border-bottom: solid #3b7389 3px;
 }
 
 #klint button {
-    border: solid #3b7389 4px;
+	border: solid #3b7389 4px;
 }
 
 .map {
-    margin-left: 10vw;
+	margin: 0 auto;
 }
 
 
 /**** BESØG oS ********/
 #guide p {
-    margin: 0 20px 40px;
+	margin: 0 20px 40px;
 }
 
 #faq {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
+	display: flex;
+	flex-direction: column;
+	text-align: right;
 }
 
 
 .faq {
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    margin: 3vw 0;
+	background-color: white;
+	color: black;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	margin: 3vw 0;
 
 
 }
 
 .active,
 .faq:hover {
-    background-color: rgba(180, 168, 131, 0.37);
+	background-color: rgba(180, 168, 131, 0.37);
 }
 
 .content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: white;
-    text-align: left;
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+	background-color: white;
+	text-align: left;
 }
 
 .faq:after {
-    content: '\0002B';
-    font-size: 35px;
-    color: black;
-    float: right;
-    margin-top: -13px;
-    margin-left: 5px;
+	content: '\0002B';
+	font-size: 35px;
+	color: black;
+	float: right;
+	margin-top: -13px;
+	margin-left: 5px;
 }
 
 .active:after {
-    content: "\02212";
+	content: "\02212";
 }
 
 #visitus h1 {
-    margin: 5vw 2vw;
+	margin: 5vw 2vw;
 }
 
 #visitus h2 {
-    margin-left: 5vw;
+	margin-left: 5vw;
 }
 
 
 /******** UNDERVISNIng*********/
 
 #teachme {
-    margin: 0 auto;
-    max-width: 480px;
+	margin: 0 auto;
+	max-width: 480px;
 }
 
 #topbuttons {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
 }
 
 #topbuttons button {
-    margin: 1vw;
-    padding: 2vw;
+	margin: 1vw;
+	padding: 2vw;
 }
 
 #dropdownbuttons {
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 #dropdownbuttons button {
-    margin: 2.5vw;
-    padding: 1vw 4vw;
+	margin: 2.5vw;
+	padding: 1vw 4vw;
 }
 
 #firstclass,
 #secondclass,
 #thirdclass {
-    display: none;
+	display: none;
 }
 
 .pressed {
-    background-color: rgba(180, 168, 131, 0.37);
+	background-color: rgba(180, 168, 131, 0.37);
 }
 
 
 /***** EVENTS ******/
 
 .event {
-    max-width: 400px;
-    margin: 10vw auto;
+	max-width: 400px;
+	margin: 10vw auto;
+}
+
+#calendar h1 {
+	margin-left: 2vw;
+}
+
+.event h2,
+.event p {
+	margin: 4vw;
 }
 
 /********* KONTAKT *************/
 
 #contact li {
-    list-style: none;
-    font-family: 'limestonelight';
+	list-style: none;
+	font-family: 'limestonelight';
 }
 
 #contact ul {
-    padding: 3vw;
-    margin: 0 auto;
-    max-width: 400px;
+	padding: 3vw;
+	margin: 0 auto;
+	max-width: 400px;
 }
 
 #contact h1 {
-    margin-left: 2vw;
+	margin-left: 2vw;
 }
 
 #contact h2 {
-    margin: 0 0 3vw;
+	margin: 0 0 3vw;
 }
 
 #route h1 {
-    margin-right: 2vw;
+	margin-right: 2vw;
 }
 
 #about h1 {
-    margin-left: 2vw;
+	margin-left: 2vw;
 }
 
 #about p {
-    margin: 4vw;
+	margin: 4vw;
 }
 
 #jobs h1 {
-    text-align: right;
-    margin: 20vw 2vw 5vw;
-    ;
+	text-align: right;
+	margin: 20vw 2vw 5vw;
+	;
 }
 
 #jobs p {
-    margin: 4vw;
+	margin: 4vw;
 }
 
 #jobs h2 {
-    margin-left: 4vw;
+	margin-left: 4vw;
 }
 
 #jobs li {
-    font-family: 'limestonelight';
-    list-style: disc;
+	font-family: 'limestonelight';
+	list-style: disc;
 }
+
+/***** BILLETTER ******/
+
+
+#partone {
+	display: flex;
+	flex-direction: column;
+	margin-left: 4vw;
+}
+
+#partone a {
+	font-family: 'limestonelight';
+	color: black;
+	margin: 2vw 4vw;
+	text-decoration: underline #B4A883;
+}
+
+#parttwo {
+	margin-left: 4vw;
+}
+
+.information {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.information p {
+	flex: 1;
+}
+
+.number {
+	flex: 0;
+	display: flex;
+	flex-direction: row;
+	align-self: flex-end;
+}
+
+.plus {
+	color: black;
+	float: right;
+	margin: -16px 3vw;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+.minus {
+	color: black;
+	float: right;
+	margin: -15px 3vw;
+	font-size: 25px;
+	cursor: pointer;
+}
+
 
 /*****MEDIAQUERIES********/
 
 @media (min-width: 610px) {
-    nav {
-        flex-direction: row;
-    }
+	nav {
+		flex-direction: row;
+	}
 
-    #right {
-        margin-top: 30px;
-    }
+	#right {
+		margin-top: 30px;
+	}
 
-    button {
-        padding: 1vw;
-    }
+	nav a {
+		margin: 50px 10px 0px 0px;
+	}
 
-    #teachme {
-        max-width: 535px;
-    }
+	button {
+		padding: 1vw;
+	}
 
-    #dropdownbuttons button {
-        margin: 0 0 0 2.5vw;
-    }
+	#teachme {
+		max-width: 535px;
+	}
+
+	#dropdownbuttons button {
+		margin: 0 0 0 2.5vw;
+	}
+
+	#partone {
+		max-width: 400px;
+		margin: 0 auto;
+	}
+
+	#parttwo {
+		max-width: 400px;
+		margin: 0 auto;
+	}
+
+	#parttwo button {
+		padding: 10px 20px;
+		margin: 50px 0 0;
+	}
 }
 
 @media (min-width: 850px) {
-    nav a {
-        font-size: 20px;
-    }
+	nav a {
+		font-size: 20px;
+	}
 
-    #dropdownbuttons button {
-        margin: 0 0 0 2vw;
-    }
+	#dropdownbuttons button {
+		margin: 0 0 0 2vw;
+	}
 
-    .event {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin: 8vw auto;
-        max-width: 800px;
+	.event {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		margin: 8vw auto;
+		max-width: 800px;
 
-    }
+	}
 
-    .event h2 {
-        margin: 2vw;
-    }
+	.event h2 {
+		margin: 2vw;
+	}
 
-    #calendar h1 {
-        max-width: 800px;
-        margin: 0 auto;
-    }
+	#calendar h1 {
+		max-width: 800px;
+		margin: 0 auto;
+	}
 
-    #contact h1 {
-        max-width: 800px;
-        margin: 0 auto;
-    }
+	#contact h1 {
+		max-width: 800px;
+		margin: 0 auto;
+	}
 
-    #contact h2 {
-        margin-top: 2vw;
-    }
+	#contact h2 {
+		margin-top: 2vw;
+	}
 
-    #contact ul {
-        max-width: 780px;
-        padding: 1vw;
-    }
+	#contact ul {
+		max-width: 780px;
+		padding: 1vw;
+	}
 }
 
 @media (min-width: 900px) {
-    body {
-        max-width: 90%;
-        margin: 0 auto;
-    }
+	body {
+		max-width: 90%;
+		margin: 0 auto;
+	}
 
-    img {
-        width: 70%;
-    }
+	img {
+		width: 70%;
+	}
 
-    #geomuseum img {
-        width: 100%;
-    }
+	#geomuseum img {
+		width: 100%;
+	}
 
-    #stevnsklint img {
-        width: 40%;
-        height: 40vw;
-    }
+	#stevnsklint img {
+		width: 40%;
+		height: 40vw;
+	}
 
-    #geomuseum {
-        margin-top: 30vw;
-    }
+	#geomuseum {
+		margin-top: 30vw;
+	}
 
-    #stevnsklint h1 {
-        margin-left: 100px;
-    }
+	#stevnsklint h1 {
+		margin-left: 100px;
+	}
 
-    #map {
-        width: 60%;
-        margin: 5vw 20vw;
-    }
+	#map {
+		width: 60%;
+		margin: 5vw 20vw;
+	}
 
-    .text1 {
-        width: 62vw;
-        margin: 0 auto;
-    }
+	.text1 {
+		width: 62vw;
+		margin: 0 auto;
+	}
 
-    .map {
-        width: 40%;
-        margin: 4vw auto;
-    }
+	.map {
+		width: 40%;
+		margin: 4vw auto;
+	}
 
-    #geo img {
-        width: 100%;
-    }
+	#geo img {
+		width: 100%;
+	}
 
-    #geo button {
-        margin: 2vw 40vw;
-        width: 10%;
-    }
+	#geo button {
+		margin: 2vw 40vw;
+		width: 10%;
+	}
 
-    #geo h1 {
-        width: 70%;
-        margin: 1vw auto;
-    }
+	#geo h1 {
+		width: 70%;
+		margin: 1vw auto;
+	}
 
-    #fort img {
-        width: 100%;
-    }
+	#fort img {
+		width: 100%;
+	}
 
-    #fort button {
-        margin: 2vw 40vw;
-        width: 10%;
-    }
+	#fort button {
+		margin: 2vw 40vw;
+		width: 10%;
+	}
 
-    #fort h1 {
-        width: 70%;
-        margin: 1vw auto;
-    }
+	#fort h1 {
+		width: 70%;
+		margin: 1vw auto;
+	}
 
-    #fort .map {
-        width: 70%;
-    }
+	#fort .map {
+		width: 70%;
+	}
 
-    #klint img {
-        width: 100%;
-    }
+	#klint img {
+		width: 100%;
+	}
 
-    #klint button {
-        margin: 2vw 40vw;
-        width: 10%;
-    }
+	#klint button {
+		margin: 2vw 40vw;
+		width: 10%;
+	}
 
-    #klint h1 {
-        width: 70%;
-        margin: 1vw auto;
-    }
+	#klint h1 {
+		width: 70%;
+		margin: 1vw auto;
+	}
 
-    .splash {
-        width: 70%;
-        margin: 0 auto;
-    }
+	.splash {
+		width: 70%;
+		margin: 0 auto;
+	}
 
-    #visitus {
-        max-width: 900px;
-        margin: 0 auto;
-    }
+	#visitus {
+		max-width: 900px;
+		margin: 0 auto;
+	}
 
-    #teachme {
-        max-width: 700px;
-    }
+	#teachme {
+		max-width: 700px;
+	}
 
-    #topbuttons:first-child {
-        margin-left: 1vw
-    }
+	#topbuttons:first-child {
+		margin-left: 1vw
+	}
 
-    #topbuttons button {
-        margin: 0 4vw 0 1vw;
-        padding: 1vw;
-    }
+	#topbuttons button {
+		margin: 0 4vw 0 1vw;
+		padding: 1vw;
+	}
 
-    #dropdownbuttons button {
-        margin: 4vw 0 0 1vw;
-    }
+	#dropdownbuttons button {
+		margin: 4vw 0 0 1vw;
+	}
+
+	#prices {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	#partone,
+	#parttwo {
+		margin: 1vw;
+	}
+
+	#partone {
+		margin-left: 5vw;
+		flex: 2;
+	}
+
+	#parttwo {
+		margin-right: 15vw;
+		flex: 10;
+	}
+
+	.number {
+		width: 30px;
+	}
+
+	#partone a {
+		margin: 1vw 0;
+	}
+
+	#parttwo button {
+		margin: 50px 0 0;
+		padding: 20px 50px;
+	}
+
+	.dropdown-content a {
+		padding: 1vw;
+	}
 }
