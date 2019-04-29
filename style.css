@@ -86,6 +86,37 @@ nav a {
     background-size: contain;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 25vw;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    background-color: white;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 5vw 2vw;
+    border-bottom: 2px solid #B4A883;
+    display: block;
+    margin: 0;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
 #footer {}
 
 /******* INDEX *********/
@@ -100,12 +131,20 @@ nav a {
     text-align: right;
 }
 
+#stevnsfort h1 {
+    margin-right: 2vw;
+}
+
 #geomuseum {
     margin-top: 60vw;
 }
 
 #geomuseum img {
     width: 150%;
+}
+
+#geomuseum h1 {
+    margin-left: 2vw;
 }
 
 #stevnsklint {
@@ -258,6 +297,14 @@ button {
     content: "\02212";
 }
 
+#visitus h1 {
+    margin: 5vw 2vw;
+}
+
+#visitus h2 {
+    margin-left: 5vw;
+}
+
 
 /******** UNDERVISNIng*********/
 
@@ -318,8 +365,43 @@ button {
     max-width: 400px;
 }
 
+#contact h1 {
+    margin-left: 2vw;
+}
+
 #contact h2 {
     margin: 0 0 3vw;
+}
+
+#route h1 {
+    margin-right: 2vw;
+}
+
+#about h1 {
+    margin-left: 2vw;
+}
+
+#about p {
+    margin: 4vw;
+}
+
+#jobs h1 {
+    text-align: right;
+    margin: 20vw 2vw 5vw;
+    ;
+}
+
+#jobs p {
+    margin: 4vw;
+}
+
+#jobs h2 {
+    margin-left: 4vw;
+}
+
+#jobs li {
+    font-family: 'limestonelight';
+    list-style: disc;
 }
 
 /*****MEDIAQUERIES********/

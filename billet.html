@@ -8,21 +8,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-
+<header>
     <nav>
         <div id="left">
-            <div id="logo"></div>
+            <a href="index.html">
+                <div id="logo"></div>
+            </a>
         </div>
         <div id="right">
-            <li>
-                <ul><a href="undervisning.html">Undervisning</a></ul>
-                <ul><a href="events.html">Events</a></ul>
-                <ul><a href="billet.html">Køb billet</a></ul>
-                <ul><a href="kontakt.html">Kontakt os</a></ul>
-            </li>
+            <div class="dropdown">
+                <a>Besøg os</a>
+                <div class="dropdown-content">
+                    <a href="visit.html">Information</a>
+                    <a href="stevnsfort.html">Stevns fort</a>
+                    <a href="geomuseum.html">Geofaxe museum</a>
+                    <a href="stevnsklint.html">Stevns klint</a>
+                </div>
+            </div>
+            <a href="undervisning.html">Undervisning</a>
+            <a href="events.html">Events</a>
+            <a href="kontakt.html">Kontakt os</a>
+            <a href="billet.html">Køb billet</a>
         </div>
     </nav>
+</header>
+
+<body>
 
     <div id="prices">PRISER</div>
 

@@ -16,7 +16,15 @@
             </a>
         </div>
         <div id="right">
-            <a href="visit.html">Besøg os</a>
+            <div class="dropdown">
+                <a>Besøg os</a>
+                <div class="dropdown-content">
+                    <a href="visit.html">Information</a>
+                    <a href="stevnsfort.html">Stevns fort</a>
+                    <a href="geomuseum.html">Geofaxe museum</a>
+                    <a href="stevnsklint.html">Stevns klint</a>
+                </div>
+            </div>
             <a href="undervisning.html">Undervisning</a>
             <a href="events.html">Events</a>
             <a href="kontakt.html">Kontakt os</a>
@@ -31,7 +39,13 @@
 
         <div id="guide">
             <h1>Guidede ture</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida neque a sapien mattis, quis commodo justo viverra. In consequat tellus vitae semper porttitor. Cras venenatis diam eu justo ultrices, id ultrices elit euismod. Pellentesque vel felis sed magna ornare elementum. Fusce dapibus neque a elementum malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent in tempus neque, ut gravida diam. Mauris sed porta felis. Quisque lacinia, eros in scelerisque tempor, enim ipsum egestas nulla, at molestie libero ex vel enim. Vivamus porta, orci vitae faucibus fringilla, quam urna commodo risus, vitae molestie ligula purus et massa. Ut tincidunt non velit eu placerat. Nullam nec ante eget erat interdum placerat.</p>
+            <h2>STEVNSFORT</h2>
+            <p>På Koldkrigsmuseum Stevnsfort foregår turen i autentiske rammer og inddrager historiske beretninger og genstandsbaserede fortællinger. Omdrejningspunktet er Stevnsforts konkrete funktion som et billede på Danmarks internationale rolle under Den Kolde Krig.</p>
+            <h2>STEVNSKLINT</h2>
+            <p>Bestil en guidet tur på Stevns klint og hør om det 66. mio år gamle drama, som man kan finde sporene af blandt Stevns Klints lag af kalk, kridt og flint. På turen får I også fortællingen om Højerup Gamle Kirke og den industrielle udnyttelse af klinten igennem tiden.</p>
+            <h2>GEOMUSEUM FAXE</h2>
+            <p>Turen starter på Geomuseum Faxe hvor I hører historien om kridt, kalk og den store massedød. Derefter går turen ned i Faxe Kalkbrud, hvor vi udstyret med hammer og mejsel vil hakke efter fossiler, af de dyr som levede i det vandet dengang Faxe kalkbrud var koralrev. </p>
+
         </div>
 
         <div id="faq">
@@ -72,22 +86,21 @@
 
 
     <script>
-        let faq = document.querySelector(".faq");
+        let faq = document.querySelectorAll(".faq");
+        let i;
 
-        faq.addEventListener("click", start);
+        for (i = 0; i < faq.length; i++) {
+            faq[i].addEventListener("click", function() {
 
-        function start() {
-            this.classList.toggle("active");
+                this.classList.toggle("active");
 
-            let content = this.nextElementSibling;
-
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-
-
-            }
+                let content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
         }
     </script>
 
