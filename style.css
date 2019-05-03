@@ -827,7 +827,11 @@ button {
     }
 
     #dropdownbuttons button {
-        margin: 4vw 0 0 1vw;
+        margin: 1vw 0 0 1vw;
+    }
+
+    #lektioner {
+        margin-top: 4vw;
     }
 
     #prices {

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babushka</title>
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:300|Share+Tech+Mono|Stalinist+One" rel="stylesheet">
+</head>
+
+<body>
+    <div id="splash">Babushka</div>
+
+    <nav class="menu">
+
+        <button class="filter valgt" data-hold="alle">Alle</button>
+        <button class="filter" data-hold="forretter">Foretter</button>
+        <button class="filter" data-hold="hovedretter">Hovedretter</button>
+        <button class="filter" data-hold="desserter">Desserter</button>
+        <button class="filter" data-hold="drikkevarer">Drikkevarer</button>
+        <button class="filter" data-hold="sideorders">Sideordrer</button>
+    </nav>
+
+    <div id="liste">
+
+    </div>
+
+    <style>
+        body {
+            margin: 0 auto;
+        }
+
+        #splash {
+            font-size: 10vw;
+            font-family: 'Stalinist One', cursive;
+            text-align: center;
+            background-color: rgba(205, 92, 92, 0.86);
+        }
+
+        #liste {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            margin: 5vw;
+        }
+
+        .retter {
+            margin: 4px;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
+        }
+
+        img {
+            width: 400px;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h2 {
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        p {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #readmore p {
+            font-family: 'Cutive Mono', monospace;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            margin: 5px;
+            background-color: rgba(240, 248, 255, 0);
+            border: 2px solid black;
+            padding: 10px;
+            cursor: grab;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .valgt {
+            background-color: black;
+            color: indianred;
+        }
+
+    </style>
+    <script>
+        let retter = [];
+        let filter = "alle";
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            let dest = document.querySelector("#liste");
+            async function getJson() {
+                let jsonData = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1jxxxFoWBuMJ1qhQ9BQIAyKHmP38XtAF9_sQr0xo5JLo");
+                retter = await jsonData.json();
+                visRetter();
+            }
+
+            function visRetter() {
+                dest.innerHTML = "";
+                retter.forEach(ret => {
+                    if (filter == "alle" || filter == ret.kategori) {
+                        let template = `
+                        <article class="retter">
+                            <h2>${ret.navn}</h2>
+                            <img class="billede" src="imgs/small/${ret.billede}-sm.jpg">
+                            <p>${ret.kort}</p>
+                            <br>
+                            <p>Pris: ${ret.pris}.-</p>
+
+                                <div id="readmore">
+                                <p>Læs mere</p></div>
+                        </article>
+                    `;
+                        dest.insertAdjacentHTML("beforeend", template);
+                        dest.lastElementChild.addEventListener("click", () => {
+                            location.href = "singleview.html?id=" + ret.id;
+                        });
+                    }
+                })
+            }
+            //function visPersoner slut
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            })
+
+            function filtrering() {
+                filter = this.getAttribute("data-hold");
+                document.querySelectorAll(".filter").forEach(elm => {
+                    elm.classList.remove("valgt");
+                })
+                this.classList.add("valgt");
+                visRetter();
+            }
+            getJson();
+        }
+
+    </script>
+</body>
+
+</html>

@@ -61,38 +61,45 @@
 
 
         <div id="topbuttons">
-            <button id="first">0.-3. klasse</button>
-            <button id="second">4.-6. klasse</button>
-            <button id="third">7.-10. klasse</button>
+            <button id="first" class="aargang">0-3 klasse</button>
+            <button id="second" class="aargang">4-6 klasse</button>
+            <button id="third" class="aargang">7-10 klasse</button>
         </div>
 
-        <!--
+
         <div id="dropdownbuttons">
-            <div id="firstclass"><button class="filterone">natur</button>
-                <button class="filterone">historie</button>
-                <button class="filterone">geografi</button>
+            <div id="firstclass">
+                <button class="fag">Natur</button>
+                <button class="fag">Historie</button>
+                <button class="fag">Geografi</button>
             </div>
             <div id="secondclass">
-                <button>geologi</button>
-                <button>biologi</button>
-                <button>geografi</button>
+                <button class="fag">Geologi</button>
+                <button class="fag">Biologi</button>
+                <button class="fag">Geografi</button>
             </div>
-            <div id="thirdclass"><button>geologi</button><button>biologi</button><button>geografi</button>
+            <div id="thirdclass">
+                <button class="fag">Geologi</button>
+                <button class="fag">Biologi</button>
+                <button class="fag">Geografi</button>
             </div>
         </div>
--->
 
-        <div id="materials">
-            <template>
-                <section class="pdf">
-                    <h2></h2>
-                    <div class="under">
-                        <div class="short"></div>
-                        <div class="description"></div>
-                    </div>
-                </section>
-            </template>
+
+
+        <div id="lektioner">
         </div>
+
+
+
+        <template>
+            <article class="pdf">
+                <h2></h2>
+                <div class="under">
+                    <div class="description"></div>
+                </div>
+            </article>
+        </template>
 
         <div id="booking">
             <h1>Skoletjenestepriser</h1>
@@ -131,107 +138,136 @@
         let one = document.querySelector("#firstclass");
         let two = document.querySelector("#secondclass");
         let three = document.querySelector("#thirdclass");
-        //        document.querySelector("#first").addEventListener("click", first);
-        //
-        //        document.querySelector("#second").addEventListener("click", second);
-        //
-        //        document.querySelector("#third").addEventListener("click", third);
+        document.querySelector("#first").addEventListener("click", first);
+
+        document.querySelector("#second").addEventListener("click", second);
+
+        document.querySelector("#third").addEventListener("click", third);
 
 
-        //        function first() {
-        //            this.classList.toggle("pressed");
-        //
-        //            if (one.style.display === "block") {
-        //                one.style.display = "none";
-        //            } else {
-        //                one.style.display = "block";
-        //            }
-        //
-        //            two.style.display = "none";
-        //            three.style.display = "none";
-        //
-        //            document.querySelector("#second").classList.remove("pressed");
-        //            document.querySelector("#third").classList.remove("pressed");
-        //
-        //        }
-        //
-        //        function second() {
-        //            this.classList.toggle("pressed");
-        //
-        //            if (two.style.display === "block") {
-        //                two.style.display = "none";
-        //            } else {
-        //                two.style.display = "block";
-        //            }
-        //
-        //            one.style.display = "none";
-        //            three.style.display = "none";
-        //
-        //            document.querySelector("#first").classList.remove("pressed");
-        //            document.querySelector("#third").classList.remove("pressed");
-        //        }
-        //
-        //        function third() {
-        //            this.classList.toggle("pressed");
-        //
-        //            if (three.style.display === "block") {
-        //                three.style.display = "none";
-        //            } else {
-        //                three.style.display = "block";
-        //            }
-        //
-        //            two.style.display = "none";
-        //            one.style.display = "none";
-        //
-        //            document.querySelector("#first").classList.remove("pressed");
-        //            document.querySelector("#second").classList.remove("pressed");
-        //
-        //        }
+        function first() {
+
+            if (one.style.display === "block") {
+                one.style.display = "none";
+            } else {
+                one.style.display = "block";
+            }
+
+            two.style.display = "none";
+            three.style.display = "none";
+
+        }
+
+        function second() {
+
+            if (two.style.display === "block") {
+                two.style.display = "none";
+            } else {
+                two.style.display = "block";
+            }
+
+            one.style.display = "none";
+            three.style.display = "none";
+
+        }
+
+        function third() {
+
+            if (three.style.display === "block") {
+                three.style.display = "none";
+            } else {
+                three.style.display = "block";
+            }
+
+            two.style.display = "none";
+            one.style.display = "none";
 
 
-        let materialer = [];
+        }
+
+
+        let lektioner = [];
+        let aargang = "alle";
+        let fag = "alle";
         document.addEventListener("DOMContentLoaded", start);
-        let dest = document.querySelector("#materials");
 
         function start() {
 
             async function getJson() {
-                let url = ("https://karolinekrogsboell.dk/kea/kalklandet/wordpress/wp-json/wp/v2/0-3_klasse");
+                let url = ("https://karolinekrogsboell.dk/kea/kalklandet/wordpress/wp-json/wp/v2/lektioner");
                 let jsonData = await fetch(url);
-                materialer = await jsonData.json();
-                visMaterialer();
+                lektioner = await jsonData.json();
+                //                console.log(lektioner[1].fag[0]);
+                visLektioner();
             }
 
-            function visMaterialer() {
+            function visLektioner() {
+                let dest = document.querySelector("#lektioner");
+
+                dest.innerHTML = "";
 
                 let temp = document.querySelector("template");
 
-                materialer.forEach(enkeltMateriale => {
+                lektioner.forEach(lektion => {
+                    //                   console.log(dest, temp);
 
-                    let klon = temp.cloneNode(true).content;
+                    /*                    if ((aargang == "alle" || aargang == lektion.aargang[0]) && (fag == "alle" || fag == lektion.fag[0])) { */
 
-                    klon.querySelector("h2").innerHTML = enkeltMateriale.title.rendered;
-                    klon.querySelector(".description").innerHTML = enkeltMateriale.content.rendered;
+                    if ((aargang == lektion.aargang[0]) && (fag == lektion.fag[0])) {
 
-                    klon.querySelector(".short").innerHTML = enkeltMateriale.uddrag;
+                        //                        console.log(aargang, lektion.aargang, fag, lektion.fag);
 
-                    dest.appendChild(klon);
+                        let klon = temp.cloneNode(true).content;
+
+                        klon.querySelector("h2").textContent = lektion.title.rendered;
+                        klon.querySelector(".description").innerHTML = lektion.content.rendered;
+
+                        dest.appendChild(klon);
+                    }
+
                 })
 
-                document.querySelector("#first").addEventListener("click", first);
 
-                function first() {
-                    this.classList.toggle("pressed");
-                    if (dest.style.display === "block") {
-                        dest.style.display = "none";
-                    } else {
-                        dest.style.display = "block";
-                    }
-                }
+            }
 
+            document.querySelectorAll(".aargang").forEach(elm => {
+                elm.addEventListener("click", visAargang);
+
+            })
+
+            document.querySelectorAll(".fag").forEach(btn => {
+                btn.addEventListener("click", visFag);
+
+            })
+
+            function visAargang() {
+                aargang = this.textContent;
+
+                fag = "alle";
+
+                //                console.log(aargang);
+                document.querySelectorAll(".aargang").forEach(elm => {
+                    elm.classList.remove("pressed");
+                })
+                this.classList.add("pressed");
+                visLektioner();
+            }
+
+            function visFag() {
+                fag = this.textContent;
+
+                //                console.log(fag);
+                document.querySelectorAll(".fag").forEach(btn => {
+                    btn.classList.remove("pressed");
+                })
+                this.classList.add("pressed");
+                visLektioner();
             }
 
             getJson()
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
