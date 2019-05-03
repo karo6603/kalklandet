@@ -38,6 +38,7 @@
 body {
     max-width: 1000px;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 header {
@@ -53,11 +54,13 @@ h1 {
     text-transform: uppercase;
     text-decoration: underline #B4A883;
     text-underline-position: under;
+    letter-spacing: 4px;
 }
 
 h2 {
     font-family: 'limestonelight';
     text-transform: uppercase;
+    letter-spacing: 4px;
 }
 
 p {
@@ -132,8 +135,8 @@ footer {
 
 .flogo {
     background-image: url(materiale/Billeder/Asset%201.png);
-    width: 10vw;
-    height: 2vw;
+    width: 150px;
+    height: 30px;
     background-size: contain;
     margin-top: 10px;
 }
@@ -160,6 +163,56 @@ footer {
 }
 
 /******* INDEX *********/
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 99%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.31);
+    display: flex;
+    align-items: center;
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}
+
+.overlay p {
+    color: white;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+#geomuseum .overlay {
+    width: 150%;
+}
+
+#stevnsklint .overlay {
+    width: 50%;
+    height: 90%;
+}
+
+#stevnsklint .container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#stevnsklint .overlay {
+    top: 31px;
+    right: 0px;
+    left: 50%;
+}
 
 #top {
     display: flex;
@@ -201,6 +254,7 @@ footer {
 #stevnsklint h1 {
     margin-top: 50px;
     position: absolute;
+    z-index: 1;
 }
 
 #stevnsklint img {
@@ -218,16 +272,20 @@ footer {
 }
 
 #map {
-    background-image: url(materiale/Billeder/maps.png);
-    width: 90%;
-    height: 45vw;
+    background-image: url(materiale/Billeder/outline_map.svg);
+    width: 100%;
+    height: 80vw;
     background-size: contain;
     background-repeat: no-repeat;
-    margin: 0 5vw;
+    margin: 0 auto;
 }
 
 #text1 {
     font-family: 'limestonelight';
+}
+
+.info {
+    margin-top: 20px;
 }
 
 /******BESØGSSIDER*********/
@@ -254,6 +312,7 @@ button {
 
 #geo .text1 {
     border-bottom: solid #00a5a3 3px;
+    text-align: left;
 }
 
 #geo button {
@@ -267,6 +326,7 @@ button {
 
 #fort .text1 {
     border-bottom: solid #0081ad 3px;
+    text-align: left;
 }
 
 #fort button {
@@ -280,6 +340,7 @@ button {
 
 #klint .text1 {
     border-bottom: solid #3b7389 3px;
+    text-align: left;
 }
 
 #klint button {
@@ -392,7 +453,7 @@ button {
 }
 
 #booking button {
-    margin: 0 10vw;
+    margin: 40px 14vw;
     width: 300px;
     height: 150px;
     cursor: auto;
@@ -437,6 +498,26 @@ button {
 
 .pressed {
     background-color: rgba(180, 168, 131, 0.37);
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    filter: grayscale(0.5);
+}
+
+.column {
+    flex: 100%;
+    max-width: 70%;
+    margin: 0 auto;
 }
 
 
@@ -487,12 +568,20 @@ button {
     margin-right: 2vw;
 }
 
+iframe {
+    width: 100%;
+    height: 30vw;
+    border: none;
+}
+
+
 #about h1 {
     margin: 15vw 2vw 5vw;
 }
 
 #about p {
     margin: 4vw;
+    line-height: 1.6;
 }
 
 #jobs h1 {
@@ -501,6 +590,7 @@ button {
 
 #jobs p {
     margin: 4vw;
+    line-height: 1.6;
 }
 
 #jobs h2 {
@@ -510,6 +600,7 @@ button {
 #jobs li {
     font-family: 'limestonelight';
     list-style: disc;
+    line-height: 1.6;
 }
 
 /***** BILLETTER ******/
@@ -604,6 +695,12 @@ button {
         padding: 10px 20px;
         margin: 50px 0 0;
     }
+
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+
 }
 
 @media (min-width: 850px) {
@@ -714,6 +811,57 @@ button {
     #booking h1 {
         margin-top: 6vw;
     }
+
+    .museums {
+        background-image: url(materiale/Billeder/outline_medium_stiplet.svg);
+        width: 100%;
+        height: 110vw;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .info {
+        text-align: center;
+        padding: 30px;
+        margin-top: 800px;
+    }
+
+    #text1 {
+        font-size: 30px;
+    }
+
+    #gethere h1 {
+        text-align: center;
+    }
+
+    #logo {
+        width: 240px;
+        height: 50px;
+        background-repeat: no-repeat;
+    }
+
+    #stevnsklint .overlay {
+        height: 95%;
+    }
+
+
+
+    .column {
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 15px;
+    }
+
+    #gethere {
+        height: 900px;
+    }
+
+    #map {
+        width: 70%;
+        height: 900px;
+    }
+
 }
 
 @media (min-width: 900px) {
@@ -871,4 +1019,26 @@ button {
     .dropdown-content a {
         padding: 1vw;
     }
+
+    .overlay {
+        width: 70%;
+        left: 30%;
+    }
+
+    #geomuseum .overlay {
+        left: 0;
+        width: 100%;
+    }
+
+    #stevnsklint .overlay {
+        width: 40%;
+        left: 60%;
+        height: 95%;
+    }
+
+    .info {
+        margin-top: 100px;
+    }
+
+
 }
