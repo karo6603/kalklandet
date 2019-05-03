@@ -97,6 +97,7 @@
                 <h2></h2>
                 <div class="under">
                     <div class="description"></div>
+                    <div class="picture"></div>
                 </div>
             </article>
         </template>
@@ -240,6 +241,7 @@
 
                         klon.querySelector("h2").textContent = lektion.title.rendered;
                         klon.querySelector(".description").innerHTML = lektion.content.rendered;
+                        klon.querySelector(".picture").innerHTML = `<img src="${lektion.pdf.guid}">`;
 
                         dest.appendChild(klon);
                     }

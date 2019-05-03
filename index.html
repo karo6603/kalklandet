@@ -122,7 +122,7 @@
 
         function start() {
             async function getJson() {
-                let url = "https://karolinekrogsboell.dk/kea/kalklandet/wordpress/wp-json/wp/v2/posts/40";
+                let url = "https://karolinekrogsboell.dk/kea/kalklandet/wordpress/wp-json/wp/v2/posts/6";
                 let jsonData = await fetch(url);
                 indhold = await jsonData.json();
                 visIndhold();

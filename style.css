@@ -520,6 +520,11 @@ button {
     margin: 0 auto;
 }
 
+.picture {
+    width: 20%;
+    margin: 40px 16px;
+}
+
 
 /***** EVENTS ******/
 

@@ -86,7 +86,7 @@
 
         function start() {
             async function getJson() {
-                let url = "https://karolinekrogsboell.dk/kea/kalklandet/wordpress/wp-json/wp/v2/event";
+                let url = "https://karolinekrogsboell.dk/kea/kalklandet/wordpress/wp-json/wp/v2/events";
                 let jsonData = await fetch(url);
                 events = await jsonData.json();
                 visEvents();
