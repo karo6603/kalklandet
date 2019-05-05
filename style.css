@@ -54,13 +54,13 @@ h1 {
     text-transform: uppercase;
     text-decoration: underline #B4A883;
     text-underline-position: under;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
 }
 
 h2 {
     font-family: 'limestonelight';
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
 }
 
 p {
@@ -587,6 +587,7 @@ iframe {
 #about p {
     margin: 4vw;
     line-height: 1.6;
+    letter-spacing: 0.5px;
 }
 
 #jobs h1 {

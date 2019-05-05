@@ -39,7 +39,7 @@
                 <div class="dropdown-content">
                     <a href="visit.html">Information</a>
                     <a href="stevnsfort.html">Stevns fort</a>
-                    <a href="geomuseum.html">Geofaxe museum</a>
+                    <a href="geomuseum.html">Geomuseum Faxe</a>
                     <a href="stevnsklint.html">Stevns klint</a>
                 </div>
             </div>
@@ -86,30 +86,34 @@
 
         function start() {
             async function getJson() {
-                let url = "https://karolinekrogsboell.dk/kea/kalklandet/wordpress/wp-json/wp/v2/events";
-                let jsonData = await fetch(url);
-                events = await jsonData.json();
-                visEvents();
-            }
+                    let url = "https://karolinekrogsboell.dk/kea/kalklandet/wordpress/wp-json/wp/v2/events";
+                    let jsonData = await fetch(url);
+                    events = await jsonData.json();
+                            visEvents();
+                        }
 
-            function visEvents() {
-                let dest = document.querySelector("#calendar");
+                        function visEvents() {
+                            let dest = document.querySelector("#calendar");
 
-                let temp = document.querySelector("template");
+                            let temp = document.querySelector("template");
 
-                events.forEach(event => {
-                    let klon = temp.cloneNode(true).content;
+                            events.forEach(event => {
+                                let klon = temp.cloneNode(true).content;
 
-                    klon.querySelector("h2").innerHTML = event.title.rendered;
-                    klon.querySelector(".description").innerHTML = event.content.rendered;
+                                klon.querySelector("h2").innerHTML = event.title.rendered;
+                                klon.querySelector(".description").innerHTML = event.content.rendered;
 
-                    klon.querySelector(".date").innerHTML = event.dato;
+                                klon.querySelector(".date").innerHTML = event.dato;
 
-                    dest.appendChild(klon);
-                })
-            }
-            getJson();
-        }
+                                dest.appendChild(klon);
+                            })
+
+                        }
+                        getJson();
+                    }
+
     </script>
 
-</body></html>
+</body>
+
+</html>
